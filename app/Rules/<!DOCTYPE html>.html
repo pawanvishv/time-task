@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show/Hide Select Tab</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<div class="col-md-3">
+    <div class="form-group">
+        <label class="label-color">T-shirt</label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="tshirt" id="yesRadio" value="1">
+            <label class="label-color" class="form-check-label" for="yesRadio">Yes</label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input class="form-check-input" type="radio" checked name="tshirt" id="noRadio" value="0">
+            <label class="label-color" class="form-check-label" for="noRadio">No</label>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-3" id="tshirtSizeContainer" style="display: none;">
+    <div class="form-group">
+        <label class="label-color" for="participants">Participants</label>
+        <select class="form-control" id="tshirt_size" name="tshirt_size">
+            <option value="">-- Please Select --</option>
+            <option value="XS">X-Small</option>
+            <option value="S">Small</option>
+            <option value="M">Medium</option>
+            <option value="L">Large</option>
+            <option value="XL">X-LARGE</option>
+            <option value="XXL">XXL</option>
+            <option value="XXXL">XXXL</option>
+        </select>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        // Listen for changes in the radio buttons
+        $('input[type="radio"]').change(function () {
+            if ($(this).val() === "1") {
+                // Show the select element
+                $('#tshirtSizeContainer').show();
+            } else {
+                // Hide the select element
+                $('#tshirtSizeContainer').hide();
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
